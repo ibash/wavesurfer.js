@@ -551,7 +551,7 @@ class RegionsPlugin extends BasePlugin<RegionsPluginEvents, RegionsPluginOptions
       const width = Math.round(((region.end - region.start) / duration) * scrollWidth) || 1
 
       // Check if the region is between the scrollLeft and scrollLeft + clientWidth
-      const isVisible = start + width > scrollLeft && start < scrollLeft + clientWidth
+      const isVisible = start + width > scrollLeft && start <= scrollLeft + clientWidth
 
       if (isVisible && !element.parentElement) {
         container.appendChild(element)
